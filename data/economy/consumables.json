@@ -1,39 +1,69 @@
 {
-	"consumables": {
-		"air_processors": {
-			"random": [ 32, 128 ],
-			"locally_produced_min": 0.5
-		},
-		"grain": {
-			"random": [ 32, 128 ],
-			"locally_produced_min": 0.5
-		},
-		"fruit_and_veg": {
-			"random": [ 32, 128 ],
-			"locally_produced_min": 0.5
-		},
-		"animal_meat": {
-			"random": [ 32, 128 ],
-			"locally_produced_min": 0.5
-		},
-		"liquid_oxygen": {
-			"random": [ 32, 128 ],
-			"locally_produced_min": 0.5
-		},
-		"liquor": {
-			"random": [ 32, 128 ]
-		},
-		"consumer_goods": {
-			"random": [ 32, 128 ]
-		},
-		"medicines": {
-			"random": [ 32, 128 ]
-		},
-		"hand_weapons": {
-			"random": [ 32, 128 ]
-		},
-		"narcotics": {
-			"random": [ 32, 128 ]
-		}
-	}
+  "consumables": {
+    "air_processors": {
+      "doc": "Devices that produce and recycle breathable air in enclosed environments.",
+      "random": [32, 128],
+      "locally_produced_min": 0.5,
+      "is_perishable": false,
+      "base_price_modifier": 1.2
+    },
+    "grain": {
+      "doc": "Basic staple crops (wheat, corn, etc.) for food production.",
+      "random": [32, 128],
+      "locally_produced_min": 0.5,
+      "is_perishable": true,
+      "base_price_modifier": 1.0
+    },
+    "fruit_and_veg": {
+      "doc": "Fresh produce (fruits, vegetables) with higher spoilage rates.",
+      "random": [32, 128],
+      "locally_produced_min": 0.5,
+      "is_perishable": true,
+      "base_price_modifier": 1.1
+    },
+    "animal_meat": {
+      "doc": "Various animal-derived meats, typically requiring cold storage.",
+      "random": [32, 128],
+      "locally_produced_min": 0.5,
+      "is_perishable": true,
+      "base_price_modifier": 1.3
+    },
+    "liquid_oxygen": {
+      "doc": "O2 in liquid form, used for life support or industrial processes.",
+      "random": [32, 128],
+      "locally_produced_min": 0.5,
+      "is_perishable": false,
+      "base_price_modifier": 1.2
+    },
+    "liquor": {
+      "doc": "Distilled or fermented alcoholic beverages.",
+      "random": [32, 128],
+      "is_perishable": false,
+      "base_price_modifier": 1.2
+    },
+    "consumer_goods": {
+      "doc": "General household or personal items for daily use.",
+      "random": [32, 128],
+      "is_perishable": false,
+      "base_price_modifier": 1.0
+    },
+    "medicines": {
+      "doc": "Medical supplies, could include drugs or first-aid kits.",
+      "random": [32, 128],
+      "is_perishable": true,
+      "base_price_modifier": 1.4
+    },
+    "hand_weapons": {
+      "doc": "Personal arms or sidearms, short-range in nature.",
+      "random": [32, 128],
+      "is_perishable": false,
+      "base_price_modifier": 2.0
+    },
+    "narcotics": {
+      "doc": "Illegal or regulated substances with high value and high risk.",
+      "random": [32, 128],
+      "is_perishable": false,
+      "base_price_modifier": 2.5
+    }
+  }
 }
