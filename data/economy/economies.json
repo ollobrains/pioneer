@@ -1,64 +1,96 @@
 {
-	"agricultural": {
-		"description": {
-			"small": "YOUNG_FARMING_COLONY",
-			"medium": "OUTDOOR_AGRICULTURAL_WORLD",
-			"large": "THRIVING_OUTDOOR_WORLD",
-			"huge": "HIGH_POPULATION_OUTDOOR_WORLD"
-		},
-		"affinity": {
-			"//INFO": "affinity determines the per-system quantity of commodities produced by this economy.",
-			"agricultural": 2.0,
-			"industrial": 0.0,
-			"metallicity": 0.0
-		},
-		"generation": {
-			"//INFO": "these scalars control the economy that is selected for a system.",
-			"agricultural": 1.0,
-			"industrial": 0.0,
-			"metallicity": 0.0,
-			"population": 1.0,
-			"random": 0.0
-		}
-	},
-	"industrial": {
-		"description": {
-			"small": "SMALL_INDUSTRIAL_OUTPOST",
-			"medium": "INDUSTRIAL_COLONY",
-			"large": "HEAVY_INDUSTRY",
-			"huge": "INDUSTRIAL_HUB_SYSTEM"
-		},
-		"affinity": {
-			"agricultural": 0.0,
-			"industrial": 1.0,
-			"metallicity": 0.0
-		},
-		"generation": {
-			"agricultural": 0.0,
-			"industrial": 1.0,
-			"metallicity": 0.0,
-			"population": 1.0,
-			"random": 0.0
-		}
-	},
-	"mining": {
-		"description": {
-			"small": "SOME_ESTABLISHED_MINING",
-			"medium": "MINING_COLONY",
-			"large": "EXTENSIVE_MINING",
-			"huge": "VAST_STRIP_MINE"
-		},
-		"affinity": {
-			"agricultural": 0.0,
-			"industrial": 0.0,
-			"metallicity": 1.0
-		},
-		"generation": {
-			"agricultural": 0.0,
-			"industrial": 0.0,
-			"metallicity": 1.0,
-			"population": 1.0,
-			"random": 0.0
-		}
-	}
+  "agricultural": {
+    "doc": "Represents an outdoor, farm-oriented colony type.",
+    "description": {
+      "small": "YOUNG_FARMING_COLONY",
+      "medium": "OUTDOOR_AGRICULTURAL_WORLD",
+      "large": "THRIVING_OUTDOOR_WORLD",
+      "huge": "HIGH_POPULATION_OUTDOOR_WORLD"
+    },
+    "affinity": {
+      // How strongly this economy produces certain commodities
+      "agricultural": 2.0,
+      "industrial": 0.0,
+      "metallicity": 0.0
+    },
+    "generation": {
+      // Weights used in the random or procedural selection of this economy
+      "agricultural": 1.0,
+      "industrial": 0.0,
+      "metallicity": 0.0,
+      "population": 1.0,
+      "random": 0.0
+    },
+    "commodityFocus": [
+      "foodstuffs",
+      "livestock",
+      "plant_fibers"
+    ],
+    "synergy": {
+      "with_industrial": "Provides raw materials for processing",
+      "with_mining": "No direct synergy, but metals can support farm tech"
+    }
+  },
+
+  "industrial": {
+    "doc": "Focuses on manufacturing and heavy industry. Often has pollution or large factories.",
+    "description": {
+      "small": "SMALL_INDUSTRIAL_OUTPOST",
+      "medium": "INDUSTRIAL_COLONY",
+      "large": "HEAVY_INDUSTRY",
+      "huge": "INDUSTRIAL_HUB_SYSTEM"
+    },
+    "affinity": {
+      "agricultural": 0.0,
+      "industrial": 1.0,
+      "metallicity": 0.0
+    },
+    "generation": {
+      "agricultural": 0.0,
+      "industrial": 1.0,
+      "metallicity": 0.0,
+      "population": 1.0,
+      "random": 0.0
+    },
+    "commodityFocus": [
+      "manufactured_goods",
+      "machinery",
+      "chemicals"
+    ],
+    "synergy": {
+      "with_agricultural": "Processes farm output into refined goods",
+      "with_mining": "Uses mined ores as raw materials"
+    }
+  },
+
+  "mining": {
+    "doc": "Extractive industry focusing on ores, metals, and minerals.",
+    "description": {
+      "small": "SOME_ESTABLISHED_MINING",
+      "medium": "MINING_COLONY",
+      "large": "EXTENSIVE_MINING",
+      "huge": "VAST_STRIP_MINE"
+    },
+    "affinity": {
+      "agricultural": 0.0,
+      "industrial": 0.0,
+      "metallicity": 1.0
+    },
+    "generation": {
+      "agricultural": 0.0,
+      "industrial": 0.0,
+      "metallicity": 1.0,
+      "population": 1.0,
+      "random": 0.0
+    },
+    "commodityFocus": [
+      "raw_ores",
+      "precious_metals",
+      "gems"
+    ],
+    "synergy": {
+      "with_agricultural": "Limited synergy, but requires food imports for workers",
+      "with_industrial": "Vital to produce refined metals for industrial processes"
+    }
+  }
 }
